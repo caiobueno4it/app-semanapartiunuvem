@@ -1,0 +1,27 @@
+version: '3.8'
+
+networks:
+  net_semanapartiunuvem:
+    driver: bridge
+
+services:
+  db_semanapartiunuvem:
+    image: caiobueno4it/db-semanapartiunuvem:v1
+    ports:
+      - 1433:1433
+    networks:
+      - net_semanapartiunuvem    
+    environment:
+      ACCEPT_EULA: Y
+      SA_PASSWORD: Partiunuvem@2023
+
+  app_semanapartiunuvem:
+    image: caiobueno4it/app-semanapartiunuvem:v1
+    ports:
+      - 8080:80
+    networks:
+      - net_semanapartiunuvem
+    depends_on:
+      - db_semanapartiunuvem
+
+

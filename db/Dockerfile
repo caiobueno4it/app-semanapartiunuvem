@@ -10,6 +10,3 @@ EXPOSE 1433
 
 # Start SQL Server on container startup
 CMD [ "/opt/mssql/bin/sqlservr" ]
-
-# Docker Run
-# docker run --name db-semanapartiunuvem -dp 1433:1433 caiobueno4it/db-semanapartiunuvem
