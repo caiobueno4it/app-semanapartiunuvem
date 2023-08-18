@@ -22,6 +22,6 @@ services:
     networks:
       - net-semanapartiunuvem
     depends_on:
-      - db_semanapartiunuvem
+      - db-semanapartiunuvem
 
 
